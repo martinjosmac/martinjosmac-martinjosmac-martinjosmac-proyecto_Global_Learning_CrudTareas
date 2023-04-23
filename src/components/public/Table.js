@@ -11,7 +11,7 @@ export const Table = ({ data, setEditTask, deleteTask }) => {
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
+                        {/* <th scope="col">id</th> */}
                         <th scope="col">Completada</th>
                         <th scope="col">Tarea</th>
                         <th scope="col">Descripcion</th>

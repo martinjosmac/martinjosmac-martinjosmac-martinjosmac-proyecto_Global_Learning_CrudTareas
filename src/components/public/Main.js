@@ -7,19 +7,19 @@ const initialDB = [{
     id: 1,
     title: "super",
     description: "comprar pan",
-    deadLine: "15 / 5 / 2023"
+    deadLine: "2023-07-01"
 },
 {
     id: 2,
     title: "reunion",
     description: "reunion cafe martinez a las 17",
-    deadLine: "15 / 5 / 2023"
+    deadLine: "2023-05-05"
 },
 {
     id: 3,
     title: "Proyecto react",
     description: "entrega proyecto react para global learning",
-    deadLine: "15 / 5 / 2023",
+    deadLine: "2023-05-09",
 }
 ]
 export const Main = () => {
@@ -28,8 +28,8 @@ export const Main = () => {
     const [editTask, setEditTask] = useState(null)
 
     const createTask = (data) => {
-      
-        data.id=Date.now();
+
+        data.id = Date.now();
         console.log(data.id)
 
         setDb([...db, data])
@@ -39,7 +39,15 @@ export const Main = () => {
         let newTask = db.map(el => el.id === data.id ? data : el);
         setDb(newTask);
     };
-    const deleteTask = (id) => { };
+    const deleteTask = (id) => {
+        let isDelete = window.confirm(`¿Estas seguro que deseas borra la tarea ' ${id}'?`);
+        if (isDelete) {
+            let newTask = db.filter(el => el.id !== id)
+            setDb(newTask)
+        } else {
+
+        }
+    };
 
     return (
         <div>

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 
 const initialF = {
-    order: null,
+    id: null,
     title: "",
     description: "",
     deadLine: null
@@ -37,7 +37,7 @@ export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
         if (!forms.title) {
             alert("Debes completar el campo titulo")
         }
-        if (forms.order === null) {
+        if (forms.id === null) {
             createTask(forms);
         } else {
             updateTask(forms);
@@ -64,7 +64,7 @@ export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
                     <input type="date" id="fecha" name="deadLine" onChange={handleChange} value={forms.deadLine} /><br></br>
                 </div>
                 <div>
-                    <input type="submit" value="Agregar tarea" />
+                    <input type="submit" value={editTask ? "modificar" : "agregar"} />
                     <input type="submit" value="Limpiar formulario" onClick={handleReset} />
                 </div>
             </form>

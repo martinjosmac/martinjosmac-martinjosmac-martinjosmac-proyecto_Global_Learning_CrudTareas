@@ -1,5 +1,10 @@
 import React from 'react'
 
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDate();
+const fullDate = `${day}-${month}-${year}`;
 export const Navbar = () => {
     return (
         <header className="p-3 mb-3 border-bottom">
@@ -19,17 +24,11 @@ export const Navbar = () => {
                     <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                         <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
                     </form>
-
-                    <div className="dropdown text-end">
-                        <a href="#" className="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        </a>
-                        <ul className="dropdown-menu text-small">
-                            <li><a className="dropdown-item" href="#">New project...</a></li>
-                            <li><a className="dropdown-item" href="#">Settings</a></li>
-                            <li><a className="dropdown-item" href="#">Profile</a></li>
-                            <li><a className="dropdown-item" href="#">Sign out</a></li>
-                        </ul>
+                    <div>
+                        <h2>Fecha</h2>
+                        <h3>{fullDate}</h3>
                     </div>
+
                 </div>
             </div>
         </header>
