@@ -1,7 +1,9 @@
 import React from 'react'
 
+
 export const Row = ({ el, setEditTask, deleteTask }) => {
-    let { id, title, description, deadline } = el
+    let { id } = el
+    
     return (
         <tr>
 

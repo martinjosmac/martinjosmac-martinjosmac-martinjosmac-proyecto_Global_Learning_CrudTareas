@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Row } from './Row'
 
 
 
 export const Table = ({ data, setEditTask, deleteTask }) => {
-    // const [db, setdb] = useState(initialDB);
+
 
     return (
         <div>
@@ -16,6 +16,7 @@ export const Table = ({ data, setEditTask, deleteTask }) => {
                         <th scope="col">Tarea</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Fecha Límite</th>
+
                     </tr>
                 </thead>
                 <tbody>

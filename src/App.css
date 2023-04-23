@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
   font-size: 16px;
   font-family: sans-serif;
+
 }
 
 *,
@@ -42,13 +43,13 @@ input[type="reset"] {
   vertical-align: middle;
   cursor: pointer;
   margin-left: 0.5cm;
-  
+
 }
 
 form {
   margin-bottom: 1rem;
   margin-left: 1cm;
-  
+
 }
 
 form label {
@@ -57,20 +58,41 @@ form label {
   font-weight: 700;
   font-family: serif;
 }
-/* tr,
-th, */
-button.eliminar{
+
+
+button.eliminar {
   background-color: rgba(255, 77, 0, 0.862);
-  
+
 }
-button.modificar{
-  background-color: greenyellow;
+
+button.modificar {
+  background-color: rgb(51, 172, 248);
 }
+
+
 footer {
-  /* position: fixed; */
-  bottom: 0;
-  width: 100%;
-  height: 100px; /* Este valor puede variar dependiendo del alto que quieras darle al footer */
-  background-color: rgb(17, 110, 222);
+  margin-top: 2cm;
+  text-decoration: solid;
   
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(32, 183, 244, 0.372);
+}
+
+.fechaNav {
+  display: block;
+}
+.fechaNav h2{
+  text-decoration:underline;
+}
+
+#NombreApp {
+  margin-left: 2cm;
+}
+#firstCheckbox{
+  background-color: rgba(48, 50, 50, 0.225);
+  margin-left: 50px;
 }

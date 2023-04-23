@@ -7,20 +7,24 @@ const initialDB = [{
     id: 1,
     title: "super",
     description: "comprar pan",
-    deadLine: "2023-07-01"
+    deadLine: "2023-07-01",
+
 },
 {
     id: 2,
     title: "reunion",
     description: "reunion cafe martinez a las 17",
-    deadLine: "2023-05-05"
+    deadLine: "2023-05-05",
+
 },
 {
     id: 3,
     title: "Proyecto react",
     description: "entrega proyecto react para global learning",
     deadLine: "2023-05-09",
+
 }
+
 ]
 export const Main = () => {
 

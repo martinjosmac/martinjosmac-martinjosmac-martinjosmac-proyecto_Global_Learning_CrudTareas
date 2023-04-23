@@ -6,7 +6,8 @@ const initialF = {
     id: null,
     title: "",
     description: "",
-    deadLine: null
+    deadLine: null,
+    time: null,
 }
 export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
 
@@ -61,7 +62,7 @@ export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
                 </div>
                 <div class="mb-3">
                     <label for="fecha">Fecha límite:</label>
-                    <input type="date" id="fecha" name="deadLine" onChange={handleChange} value={forms.deadLine} /><br></br>
+                    <input type="date" id="fecha" name="deadLine" onChange={handleChange} value={forms.deadLine} />
                 </div>
                 <div>
                     <input type="submit" value={editTask ? "Modificar" : "Agregar"} />
