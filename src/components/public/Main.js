@@ -39,6 +39,7 @@ export const Main = () => {
         let newTask = db.map(el => el.id === data.id ? data : el);
         setDb(newTask);
     };
+
     const deleteTask = (id) => {
         let isDelete = window.confirm(`¿Estas seguro que deseas borra la tarea ' ${id}'?`);
         if (isDelete) {

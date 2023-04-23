@@ -64,8 +64,8 @@ export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
                     <input type="date" id="fecha" name="deadLine" onChange={handleChange} value={forms.deadLine} /><br></br>
                 </div>
                 <div>
-                    <input type="submit" value={editTask ? "modificar" : "agregar"} />
-                    <input type="submit" value="Limpiar formulario" onClick={handleReset} />
+                    <input type="submit" value={editTask ? "Modificar" : "Agregar"} />
+                    <input type="reset" value="Limpiar formulario" onClick={handleReset} />
                 </div>
             </form>
         </div>
