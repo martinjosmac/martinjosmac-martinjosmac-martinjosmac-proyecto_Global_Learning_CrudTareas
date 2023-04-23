@@ -8,7 +8,7 @@ export const Table = ({ data, setEditTask, deleteTask }) => {
 
     return (
         <div>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
 

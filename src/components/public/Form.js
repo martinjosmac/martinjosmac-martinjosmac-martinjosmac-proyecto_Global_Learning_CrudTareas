@@ -52,16 +52,16 @@ export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Título:</label>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Título:</label>
                     <input type="text" name="title" placeholder='titulo' onChange={handleChange} value={forms.title} />
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descripción:</label>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlTextarea1" className="form-label">Descripción:</label>
                     <input type="text" name="description" placeholder='descripcion' onChange={handleChange} value={forms.description} />
                 </div>
-                <div class="mb-3">
-                    <label for="fecha">Fecha límite:</label>
+                <div className="mb-3">
+                    <label htmlFor="fecha">Fecha límite:</label>
                     <input type="date" id="fecha" name="deadLine" onChange={handleChange} value={forms.deadLine} />
                 </div>
                 <div>
