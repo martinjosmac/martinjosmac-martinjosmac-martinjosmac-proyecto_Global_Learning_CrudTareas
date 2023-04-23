@@ -1,56 +1,66 @@
+import React, { useState, useEffect } from 'react'
 
-import React, { useState, UseEffect } from 'react'
 
-// const initialDB = [{
-//     order: 1,
-//     title: "super",
-//     description: "comprar pan",
-//     deadLine: 15 / 5 / 2023
-// },
-// {
-//     order: 2,
-//     title: "reunion",
-//     description: "reunion cafe martinez a las 17",
-//     deadLine: 15 / 5 / 2023
-// },
-// {
-//     order: 1,
-//     title: "Proyecto react",
-//     description: "entrega proyecto react para global learning",
-//     deadLine: 15 / 5 / 2023
-// }
-// ]
-const initialF={
+
+const initialF = {
     order: null,
     title: "",
     description: "",
     deadLine: null
 }
-export const Form = () => {
-    const [form, setForm] = useState(initialF);
+export const Form = ({ createTask, updateTask, editTask, seteditTask }) => {
 
-    const handleChange = (e) => { }
-    const handleSubmit = (e) => { }
-    const handleReset = (e) => { }
+    const [forms, setForms] = useState(initialF);
+
+    const handleChange = (e) => {
+
+        setForms({
+
+            ...forms,
+            [e.target.name]: e.target.value,
+
+        });
+
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!forms.title || !forms.deadLine) {
+            alert("Debes completar el campo titulo y/ o el campo de la fecha")
+        }
+        if (forms.order === null) {
+            createTask(forms);
+        } else {
+            updateTask(forms);
+        }
+        handleReset();
+    }
+    const handleReset = (e) => {
+        setForms(initialF);
+        seteditTask(null);
+    }
     return (
-
-        <form onSubmit={handleSubmit}>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Título:</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" onChange={handleChange} value={form.title} />
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Descripción:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={handleChange} value={form.description}></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="fecha">Fecha límite:</label>
-                <input type="date" id="fecha" name="fecha" onChange={form.deadLine} /><br></br>
-            </div>
-            <div>
-                <input type="submit" value="Agregar tarea" />
-                <input type="submit" value="limpiar formulario" onClick={handleReset} />
-            </div>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Título:</label>
+                    <input type="text" name="title" placeholder='titulo' onChange={handleChange} value={forms.title} />
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descripción:</label>
+                    <input type="text" name="description" placeholder='descripcion' onChange={handleChange} value={forms.description} />
+                </div>
+                <div class="mb-3">
+                    <label for="fecha">Fecha límite:</label>
+                    <input type="date" id="fecha" name="deadLine" onChange={handleChange} value={forms.deadLine} /><br></br>
+                </div>
+                <div>
+                    <input type="submit" value="Agregar tarea" />
+                    <input type="submit" value="Limpiar formulario" onClick={handleReset} />
+                </div>
+            </form>
+        </div>
     )
 }
+
