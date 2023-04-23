@@ -4,10 +4,10 @@ import React, { useState, useEffect } from 'react'
 
 const initialF = {
     id: null,
-    title: "",
+    title:"",
     description: "",
-    deadLine: null,
-    time: null,
+    deadLine: "",
+    time: "",
 }
 export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
 
@@ -66,7 +66,7 @@ export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
                 </div>
                 <div>
                     <input type="submit" value={editTask ? "Modificar" : "Agregar"} />
-                    <input type="reset" value="Limpiar formulario" onClick={handleReset} />
+                    <input type="reset" value="LimpiarFormulario" onClick={handleReset} />
                 </div>
             </form>
         </div>

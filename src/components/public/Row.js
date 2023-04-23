@@ -7,7 +7,7 @@ export const Row = ({ el, setEditTask, deleteTask }) => {
     return (
         <tr>
 
-            <td><input className="form-check-input me-1" type="checkbox" value="" id="firstCheckbox" /></td>
+            <td><input className="form-check-input me-1" type="checkbox"  id="firstCheckbox" /></td>
             <td>{el.title}</td>
             <td>{el.description}</td>
             <td>{el.deadLine}</td>
