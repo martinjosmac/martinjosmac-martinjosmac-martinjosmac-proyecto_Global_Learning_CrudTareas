@@ -25,36 +25,31 @@ const initialDB = [{
 export const Main = () => {
 
     const [db, setDb] = useState(initialDB)
-    const [editTask, seteditTask] = useState(null)
+    const [editTask, setEditTask] = useState(null)
 
     const createTask = (data) => {
-        var lastId = db.length;
-
-        
-
-        lastId = lastId + 1;
-        data.id = lastId;
+      
+        data.id=Date.now();
         console.log(data.id)
-        setDb([...db,data])
+
+        setDb([...db, data])
     }
 
-
-
-
-
-
-    const updateTask = (data) => { }
-    const deleteTask = (order) => { }
+    const updateTask = (data) => {
+        let newTask = db.map(el => el.id === data.id ? data : el);
+        setDb(newTask);
+    };
+    const deleteTask = (id) => { };
 
     return (
         <div>
             <Form createTask={createTask}
                 updateTask={updateTask}
                 editTask={editTask}
-                seteditTask={seteditTask} />
+                setEditTask={setEditTask} />
 
             <Table data={db}
-                seteditTask={seteditTask}
+                setEditTask={setEditTask}
                 deleteTask={deleteTask} />
         </div>
     )

@@ -8,9 +8,17 @@ const initialF = {
     description: "",
     deadLine: null
 }
-export const Form = ({ createTask, updateTask, editTask, seteditTask }) => {
+export const Form = ({ createTask, updateTask, editTask, setEditTask }) => {
 
     const [forms, setForms] = useState(initialF);
+
+    useEffect(() => {
+        if (editTask) {
+            setForms(editTask);
+        } else {
+            setForms(initialF);
+        }
+    }, [editTask]);
 
     const handleChange = (e) => {
 
@@ -26,8 +34,8 @@ export const Form = ({ createTask, updateTask, editTask, seteditTask }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!forms.title || !forms.deadLine) {
-            alert("Debes completar el campo titulo y/ o el campo de la fecha")
+        if (!forms.title) {
+            alert("Debes completar el campo titulo")
         }
         if (forms.order === null) {
             createTask(forms);
@@ -38,7 +46,7 @@ export const Form = ({ createTask, updateTask, editTask, seteditTask }) => {
     }
     const handleReset = (e) => {
         setForms(initialF);
-        seteditTask(null);
+        setEditTask(null);
     }
     return (
         <div>
