@@ -96,3 +96,6 @@ header {
   background-color: rgba(48, 50, 50, 0.225);
   margin-left: 50px;
 }
+table tr.tachado td {
+  text-decoration: line-through;
+}
