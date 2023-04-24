@@ -21,7 +21,7 @@ const initialDB = [{
     id: 3,
     title: "Proyecto react",
     description: "entrega proyecto react para global learning",
-    deadLine: "2023-05-09",
+    deadLine: "2023-4-24",
 
 }
 
