@@ -45,7 +45,8 @@ export const Main = () => {
     };
 
     const deleteTask = (id) => {
-        let isDelete = window.confirm(`¿Estas seguro que deseas borra la tarea ' ${id}'?`);
+      
+        let isDelete = window.confirm(`¿Estas seguro que deseas borra la tarea ?`);
         if (isDelete) {
             let newTask = db.filter(el => el.id !== id)
             setDb(newTask)
